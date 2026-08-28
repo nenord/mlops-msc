@@ -10,8 +10,8 @@ from tensorflow.keras.layers import Dense
 
 BUCKET ="gs://bucket-for-kpf-project"
 MODEL_SAVE =os.getenv("AIP_MODEL_DIR")
-#DATA_URI=os.getenv("AIP_TRAINING_DATA_URI")
-DATA_URI = "gs://bucket-for-kpf-project/UCI_Credit_Card.csv"
+DATA_URI=os.getenv("AIP_TRAINING_DATA_URI")
+#DATA_URI = "gs://bucket-for-kpf-project/UCI_Credit_Card.csv"
 df = pd.read_csv(DATA_URI)
 
 train_dataset = df.sample(frac=0.8,random_state=0)
