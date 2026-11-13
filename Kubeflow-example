@@ -2,14 +2,7 @@ from kubeflow.trainer import TrainerClient
 from kubeflow.trainer.types import CustomTrainer
 
 def my_training_function():
-    """Your training code runs inside this function."""
-    import torch
-
-    # Create model
-    model = torch.nn.Linear(10, 1)
-    optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-
-    # Remainder of training code here ....
+    """ This is where the code that is in 'task.py' file in the Vertex AI example will go"""
 
 # Submit to Kubernetes
 client = TrainerClient()
