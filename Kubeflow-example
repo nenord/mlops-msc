@@ -1,0 +1,16 @@
+from kubeflow.trainer import TrainerClient
+from kubeflow.trainer.types import CustomTrainer
+
+def my_training_function():
+    """Your training code runs inside this function."""
+    import torch
+
+    # Create model
+    model = torch.nn.Linear(10, 1)
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+    # Remainder of training code here ....
+
+# Submit to Kubernetes
+client = TrainerClient()
+job_name = client.train(trainer=CustomTrainer(func=my_training_function))
